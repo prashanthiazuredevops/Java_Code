@@ -17,8 +17,8 @@ pipeline {
         stage('Test') {
             steps {
                 warnError('Warn Errors') {
-    // some block
-}
+                // some block
+                }
             }
         }
         stage('Deploy') {
