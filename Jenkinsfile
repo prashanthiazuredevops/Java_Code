@@ -7,12 +7,18 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building'
+               checkout scmGit(branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'Prashanthi', url: 'https://github.com/prashanthiazuredevops/Java_Code.git']])
+            }
+        stage('Build') {
+            steps {
+                build 'Java'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing'
+                warnError('Warn Errors') {
+    // some block
+}
             }
         }
         stage('Deploy') {
